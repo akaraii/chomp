@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import random
 
 EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
@@ -32,12 +33,19 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        pass
-
+        for r in range(row+1):
+            self.state[r][col:]=0
     
 class Player:
+    players = []
+    name_1 = input("Enter a name")
+    name_2 = input("Enter another a name")
+    players.append(name_1)
+    players.append(name_2)
+    print("Player One is ",random.choice(players))
     def __init__(self):
-        pass
+
+
 
     def __repr__(self):
         pass
