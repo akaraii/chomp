@@ -6,8 +6,11 @@ EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
 
 class ChompGame:
-    def __init__(self):
-        pass
+    def __init__(self,size=(3,4)):
+      self.p1=Player()
+      self.p2=Player()
+      self.turn=random.choice([self.p1,self.p2])
+
 
     def __repr__(self):
         pass
@@ -21,7 +24,7 @@ class Board:
         self.cols = cols
         self.state = np.ones((rows, cols), dtype=int)
         self.state[-1][0] = -1
-
+    #to set up the game, arrange the number of rows(0-4) and coulumns(A-D)
     def __repr__(self):
         return f'Board({self.rows}, {self.cols})'
 
@@ -35,17 +38,18 @@ class Board:
     def take(self, row, col):
         for r in range(row+1):
             self.state[r][col:]=0
-    
+
 class Player:
     players = []
     name_1 = input("Enter a name")
     name_2 = input("Enter another a name")
     players.append(name_1)
     players.append(name_2)
-    print("Player One is ",random.choice(players))
-    def __init__(self):
+    print("Player One is ", random.choice(players))
+    def __init__(self, score=0,name=none):
+        self.score=score
+        self.name=input("Enter Your Name:")
 
+    def__repr__(self):
+        return f'player(score={self.score},name={self.name})'
 
-
-    def __repr__(self):
-        pass
