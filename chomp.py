@@ -11,11 +11,6 @@ class ChompGame:
       self.p2=Player()
       self.turn=random.choice([self.p1,self.p2])
 
-
-    def __repr__(self):
-        pass
-
-
 class Board:
     def __init__(self, rows, cols):
         # Use a 2d array to store board state
@@ -49,7 +44,6 @@ class Player:
     def __init__(self, score=0,name=none):
         self.score=score
         self.name=input("Enter Your Name:")
-
-    def__repr__(self):
-        return f'player(score={self.score},name={self.name})'
+    def __repr__(self):
+        return f'player(score={self.score},name={self.name}'
 
